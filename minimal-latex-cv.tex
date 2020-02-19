@@ -3,7 +3,7 @@
 %----------------------------------------------------------------------------------------
 
 % we use article class because we want to fully customize the page
-\documentclass[10pt,A4]{article}	
+\documentclass[10pt,A4]{article}
 
 
 %----------------------------------------------------------------------------------------
@@ -11,7 +11,7 @@
 %----------------------------------------------------------------------------------------
 
 %we use utf8 since we want to build from any machine
-\usepackage[utf8]{inputenc}	
+\usepackage[utf8]{inputenc}
 
 %----------------------------------------------------------------------------------------
 %	LOGIC
@@ -34,14 +34,14 @@
 %\usepackage{fetamont}
 %\usepackage[default]{gillius}
 %\usepackage[light,math]{iwona}
-%\usepackage[thin]{roboto} 
+%\usepackage[thin]{roboto}
 
 % set font default
-\renewcommand*\familydefault{\sfdefault} 	
+\renewcommand*\familydefault{\sfdefault}
 \usepackage[T1]{fontenc}
 
 % more font size definitions
-\usepackage{moresize}		
+\usepackage{moresize}
 
 % font icons package
 \usepackage{fontawesome}
@@ -51,17 +51,17 @@
 %----------------------------------------------------------------------------------------
 
 %define page styles using geometry
-\usepackage[a4paper]{geometry}		
+\usepackage[a4paper]{geometry}
 
 % for example, change the margins to 2 inches all round
-\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm} 	
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
 
 % use customized header
-\usepackage{fancyhdr}				
+\usepackage{fancyhdr}
 \pagestyle{fancy}
 
 %less space between header and content
-\setlength{\headheight}{-5pt}		
+\setlength{\headheight}{-5pt}
 
 % customize header entries
 \lhead{}
@@ -73,7 +73,7 @@
 
 %----------------------------------------------------------------------------------------
 %	GRAPHICS DEFINITIONS
-%---------------------------------------------------------------------------------------- 
+%----------------------------------------------------------------------------------------
 
 % for drawing graphics and charts
 \usepackage{tikz}
@@ -92,7 +92,7 @@
 
 %----------------------------------------------------------------------------------------
 %	ICON-SET EMBEDDING
-%---------------------------------------------------------------------------------------- 
+%----------------------------------------------------------------------------------------
 
 % at this point we simplify our icon-embedding by simply referring to a set of png images.
 % if you find a good way of including svg without conflicting with other packages you can
@@ -107,16 +107,16 @@
 %----------------------------------------------------------------------------------------
 
 % remove top header line
-\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\headrulewidth}{0pt}
 
 %remove botttom header line
-\renewcommand{\footrulewidth}{0pt}	  	
+\renewcommand{\footrulewidth}{0pt}
 
 %remove pagenum
-\renewcommand{\thepage}{}	
+\renewcommand{\thepage}{}
 
-%remove section num		
-\renewcommand{\thesection}{}			
+%remove section num
+\renewcommand{\thesection}{}
 
 
 %----------------------------------------------------------------------------------------
@@ -142,45 +142,45 @@
 % param 5: label bg color
 % param 6: cat 1 color
 \newenvironment{barchart}[8]{
-	
+
 	\newcommand{\barwidth}{0.35}
 	\newcommand{\barsep}{0.2}
-	
+
 	% param 1: overall percent
 	% param 2: label
 	% param 3: cat 1 percent
 	% param 4: cat 2 percent
 	% param 5: cat 3 percent
 	\newcommand{\baritem}[5]{
-		
+
 		\pgfmathparse{##3+##4+##5}
 		\let\perc\pgfmathresult
-		
+
 		\pgfmathparse{#2}
 		\let\barsize\pgfmathresult
-		
+
 		\pgfmathparse{\barsize*##3/100}
 		\let\barone\pgfmathresult
-		
+
 		\pgfmathparse{\barsize*##4/100}
 		\let\bartwo\pgfmathresult
-		
+
 		\pgfmathparse{\barsize*##5/100}
 		\let\barthree\pgfmathresult
-		
+
 		\pgfmathparse{(\barwidth*\thebarcount)+(\barsep*\thebarcount)}
 		\let\barx\pgfmathresult
-		
+
 		\filldraw[fill=#6, draw=none] (0,-\barx) rectangle (\barone,-\barx-\barwidth);
 		\filldraw[fill=#7, draw=none] (\barone, -\barx) rectangle (\barone+\bartwo,-\barx-\barwidth);
 		\filldraw[fill=#8, draw=none] (\barone+\bartwo,-\barx ) rectangle (\barone+\bartwo+\barthree,-\barx-\barwidth);
-		
+
 		\node [label=180:\colorbox{#5}{\textcolor{#4}{##2}}] at (0,-\barx-0.175) {};
 		\addtocounter{barcount}{1}
 	}
 	\begin{tikzpicture}
 	\setcounter{barcount}{0}
-	
+
 }
 {\end{tikzpicture}}
 
@@ -191,7 +191,7 @@
 	\definecolor{tmpcol}{RGB}{50,50,#5}
 	% slice
 	\filldraw[fill=black,draw=none] (#1,0.5) circle (#3);
-	
+
 	% outer label
 	\node[label=\textcolor{black}{#4}] at (#1,0.7) {};
 }
@@ -260,39 +260,37 @@
 %	DOCUMENT CONTENT
 %----------------------------------------------------------------------------------------
 \begin{document}
-	
+
 	%----------------------------------------------------------------------------------------
 	%	TITLE HEADLINE
 	%----------------------------------------------------------------------------------------
-	\begin{minipage}[t]{0.45\textwidth}\hrule height 0pt width 0pt%
-		\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{John Doe}}}}}%
-		
-		\vspace{1mm}\LARGE{Web App Architect}
+	\begin{minipage}[t]{0.63\textwidth}\hrule height 0pt width 0pt%
+		\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Fernanda \break Vilela}}}}}%
+
+		\vspace{1mm}\LARGE{Desenvolvedora Web}
+	\end{minipage}%
+	\begin{minipage}[t]{0.2\textwidth}\hrule height 0pt width 0pt%
+		\small%
+		\icontext{MapMarker}{12}{Brasília, DF}\\
+		\icontext{Phone}{12}{(61)98410-5469}\\
 	\end{minipage}%
 	\begin{minipage}[t]{0.3\textwidth}\hrule height 0pt width 0pt%
 		\small%
-		\icontext{MapMarker}{12}{Prague, Czech Republic}\\
-		\icontext{Phone}{12}{+420 123 456 789}\\
-		\icontext{At}{12}{\href{mailto:jan@vorisek.me}{jan@vorisek.me}}\\	
+		\icontext{At}{12}{\href{mailto:fegvilela@gmail.com}{fegvilela@gmail.com}}\\
+		\icontext{Github}{12}{\href{https://github.com/fegvilela}{github.com/fegvilela}}\\
 	\end{minipage}%
-	\begin{minipage}[t]{0.3\textwidth}\hrule height 0pt width 0pt%
-		\small%
-		\icontext{Globe}{12}{\href{https://jan.vorisek.me}{jan.vorisek.me}}\\
-		\icontext{Github}{12}{\href{https://github.com/janvorisek}{github.com/janvorisek}}\\
-		\icontext{Twitter}{12}{\href{https://twitter.com/@JanVorisekCZ}{twitter.com/@JanVorisekCZ}}\\
-	\end{minipage}%
-	
+
 	% manage space by reducing font size
 	\small%
 	\vspace{0.5cm}
-	
+
 	%----------------------------------------------------------------------------------------
 	%	SKILLS AND TECHNOLOGIES
 	%----------------------------------------------------------------------------------------
-	
-	\cvsect{Who Am I?}%
+
+	\cvsect{Quem sou eu?}%
 	\begin{minipage}[t]{0.4\textwidth}%
-		\lorem \lorem \lorem \lorem \lorem\\
+		Engenheira eletricista com experiência em desenvolvimento de software e hardware. Tenho interesse em ambientes e em projetos que promovem a liberdade criativa e inovação. Busco entender o cenário no qual o projeto se encontra, gosto de atuar também no planejamento, na conexão com as demais áreas da empresa e posicionamento de mercado.\\
 	\end{minipage}%
 	\hfill
 	\begin{minipage}[t]{0.5\textwidth}\hrule height 0pt width 0pt%
@@ -306,11 +304,11 @@
 			\baritem{50}{LaTeX}{0}{0}{60}
 		\end{barchart}
 	\end{minipage}%
-	
-	\begin{center}
-			\bubbles{5/Eclipse, 6/git, 4/Office, 3/Inkscape, 3/Blender}{}
-	\end{center}
-	
+
+	% \begin{center}
+	% 		\bubbles{5/Eclipse, 6/git, 4/Office, 3/Inkscape, 3/Blender}{}
+	% \end{center}
+	\vspace{0.25cm}
 	\cvsect{Experience}
 	\begin{entrylist}
 		\entry
@@ -369,5 +367,5 @@
 		I help... \lorem
 	\end{minipage}%
 	% LANGUAGES
-	
+
 \end{document}
