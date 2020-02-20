@@ -283,10 +283,10 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/impallari/raleway/Raleway-Regu
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/impallari/raleway/Raleway-Regular-tlf-t1--base.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/impallari/raleway/Raleway-Bold-tlf-t1.vf
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/impallari/raleway/Raleway-Bold-tlf-t1--base.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/impallari/raleway/Raleway-Bold-tlf-t1.vf
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/impallari/raleway/Raleway-Bold-tlf-t1--base.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/impallari/raleway/Raleway-Regular-tlf-t1.vf
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/impallari/raleway/Raleway-Regular-tlf-t1--base.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/impallari/raleway/Raleway-Bold-tlf-t1.vf
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/impallari/raleway/Raleway-Bold-tlf-t1--base.tfm
 INPUT minimal-latex-cv.aux
 INPUT ./minimal-latex-cv.out
 INPUT ./minimal-latex-cv.out
