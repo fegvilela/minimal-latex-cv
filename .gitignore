@@ -23,3 +23,5 @@ $RECYCLE.BIN/
 *.log
 *.aux
 *.out
+
+*.DS_Store
